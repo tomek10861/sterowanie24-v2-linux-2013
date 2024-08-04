@@ -14,13 +14,13 @@ Projekt sterowanie24 to system zdalnego sterowania urządzeniami za pośrednictw
 
 ## Popularność
 
-Projekt cieszył się dużym zainteresowaniem dzięki swojej innowacyjności i możliwości zdalnego sterowania oświetleniem domu przez Internet. Został również opisany na forum Elektroda.pl jako jeden z ciekawszych projektów domowej automatyki. Dzięki współpracy z różnymi firmami, takimi jak Kradex, Dipol i Lispol, projekt rozwijał się dynamicznie, otrzymując wsparcie w postaci darmowych produktów i rabatów【21†source】【22†source】.
+Projekt cieszył się dużym zainteresowaniem dzięki swojej innowacyjności i możliwości zdalnego sterowania oświetleniem domu przez Internet. Został również opisany na forum Elektroda.pl jako jeden z ciekawszych projektów domowej automatyki. Dzięki współpracy z różnymi firmami, takimi jak Kradex, Dipol i Lispol, projekt rozwijał się dynamicznie, otrzymując wsparcie w postaci darmowych produktów i rabatów.
 
 ## Ważne wydarzenia
 
 - Projekt został zaprezentowany w mediach, m.in. w Teleexpressie.
 - W 2015 roku zespół projektu poszerzył się o nowych członków, co umożliwiło dalszy rozwój i wprowadzenie nowych technologii, takich jak sterowanie za pomocą kart przekaźnikowych WiFi.
-- W 2017 roku udało się uruchomić pierwszą w Polsce szopkę bożonarodzeniową sterowaną przez Internet we współpracy z Urzędem Miejskim w Modliborzycach i Młodzieżową Radą Miejską【21†source】.
+- W 2017 roku udało się uruchomić pierwszą w Polsce szopkę bożonarodzeniową sterowaną przez Internet we współpracy z Urzędem Miejskim w Modliborzycach i Młodzieżową Radą Miejską.
 
 ---
 
@@ -40,10 +40,10 @@ The sterowanie24 project is a remote control system for devices via a website. T
 
 ## Popularity
 
-The project gained considerable attention due to its innovation and the ability to remotely control home lighting via the Internet. It was also featured on Elektroda.pl as one of the more interesting home automation projects. Through collaboration with various companies such as Kradex, Dipol, and Lispol, the project grew dynamically, receiving support in the form of free products and discounts【21†source】【22†source】.
+The project gained considerable attention due to its innovation and the ability to remotely control home lighting via the Internet. It was also featured on Elektroda.pl as one of the more interesting home automation projects. Through collaboration with various companies such as Kradex, Dipol, and Lispol, the project grew dynamically, receiving support in the form of free products and discounts.
 
 ## Key Events
 
 - The project was showcased in media, including Teleexpress.
 - In 2015, the project team expanded with new members, enabling further development and the introduction of new technologies, such as WiFi relay control cards.
-- In 2017, the first Internet-controlled nativity scene in Poland was launched in cooperation with the Modliborzyce City Council and the Youth City Council【21†source】.
+- In 2017, the first Internet-controlled nativity scene in Poland was launched in cooperation with the Modliborzyce City Council and the Youth City Council.
