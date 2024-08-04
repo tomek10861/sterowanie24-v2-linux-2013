@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /noip-2.1.9-1/
+Disallow: /ster/
+Disallow: /swiatelka/
+Disallow: /._noip-2.1.9-1
+Disallow: /muzyka

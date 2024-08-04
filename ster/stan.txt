@@ -1,0 +1,1 @@
+green:ON:red:OFF:red:OFF:red:OFF:red:OFF:red:OFF:red:OFF:green:ON:

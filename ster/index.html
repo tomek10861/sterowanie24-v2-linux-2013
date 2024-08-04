@@ -1,0 +1,109 @@
+ <!DOCTYPE html 
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pl" lang="pl">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=windows-1250" />
+	<title>Sterowanie</title>
+<script type="text/javascript">
+var object = false;
+ 
+if (window.XMLHttpRequest) object = new XMLHttpRequest();
+else if (window.ActiveXObject) object = new ActiveXObject("Microsoft.XMLHTTP");
+
+function getXMLHttpRequest()
+{
+var request = false;
+try {
+request = new XMLHttpRequest();
+} catch(err1) {
+try {
+request = new ActiveXObject('Msxml2.XMLHTTP');
+} catch(err2) {
+try {
+request = new ActiveXObject('Microsoft.XMLHTTP');
+} catch(err3) {
+request = false;
+}  
+}
+}
+return request;
+}
+
+function wlacz(d)
+{
+if (r = getXMLHttpRequest()) {
+r.open('GET', 'lpt.php?d=' + d, true);
+r.onreadystatechange = odbierzDane;
+r.send(null);
+}
+}
+function wylacz(s)
+{
+if (r = getXMLHttpRequest()) {
+r.open('GET', 'lpt.php?s=' + s, true);
+r.onreadystatechange = odbierzDane;
+r.send(null);
+}
+}
+function odbierzDane()
+{
+if (r.readyState == 4 && r.status == 200) {
+document.getElementById('content').innerHTML = r.responseText;
+}
+}
+
+function getData(dataSource, divID)
+{
+    // kontynuuje wylacznie gdy obiekt nie jest zajety
+    if (object.readyState==4 || object.readyState==0) 
+    {
+        // tworzy zmienna odpowiadajaca konkretnemu obiektowi na stronie
+        var obj = document.getElementById(divID);
+ 
+        // czyta z pliku lub wykonuje skrypt
+        object.open("GET", dataSource);
+ 
+        // definiuje metode obslugi odpowiedzi serwera
+        object.onreadystatechange = function()
+        {
+            // kontynuuje jesli transmisja zostala zakonczona powodzeniem
+            if (object.readyState == 4 && object.status == 200) 
+            obj.innerHTML= object.responseText;
+        }
+        // wysyla zadanie do serwera
+         object.send(null);
+      }
+}
+ 
+// w ponizszej funkcji wywolujemy funkcje getData z odpowiednimi parametrami
+// oraz wywolujemy ja sama rekurencyjnie po co okreslony czas (w naszym wypadku 1000 ms)
+function odswiezaj()
+{
+      getData('obrazek.php','mojDIVIK');
+      setTimeout("odswiezaj()", 1000);
+}
+function info()
+{
+      getData('info.php','info');
+      setTimeout("info()", 3000);
+}
+ 
+
+</script>
+</head>
+ <body>
+
+<center><H2>Panel sterowania basenem</h2></center><table><tr><td rowspan="2">
+<button type="submit" onclick="wlacz();">Wyswietl</button> <br>
+<div id="mojDIVIK">
+</div>
+<hr>
+ <script language=javascript>
+odswiezaj();
+info();
+</script>
+<div id="content"></div></td><td>
+<div id="info"></div>
+</td></tr></table></body>
+</html>

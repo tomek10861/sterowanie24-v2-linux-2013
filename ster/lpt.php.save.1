@@ -1,0 +1,155 @@
+<?php
+$answer = array();
+$d = array();
+$file = array();
+$fp = array();
+$name = array();
+$stan = array();
+$d=$_GET['d'];
+//Plik z nzawami kanałów
+$name = file("name.txt");
+	  // przypisanie zmniennej $file nazwy pliku
+$file = "stan.txt";
+
+// uchwyt pliku, otwarcie do dopisania
+$fp = fopen($file, "r");
+$stan = fread($fp, 300);
+				fclose($fp);
+for ($i=0; $i<count($name); $i++)
+{
+} 
+
+//Zerowanie	
+	if($d=="10")
+	{
+	$d= "zerownik.exe";
+exec $d
+$fp = fopen($file, "w+");
+// blokada pliku do zapisu
+flock($fp, 2);
+
+// zapisanie danych do pliku
+fwrite($fp, "red:OFF:red:OFF:red:OFF:red:OFF:red:OFF:red:OFF:red:OFF:red:OFF:");
+
+// odblokowanie pliku
+flock($fp, 3);
+fclose($fp);
+
+ }
+//Skrypt zapisujący stany do ltp
+	  if ($d=='0'or $d=='1'or $d=='2'or $d=='3'or $d=='4'or $d=='5'or $d=='6'or $d=='7')
+	  {
+	  $d= $_GET['d'];
+	$d= "LPT.exe $d";
+  exec($d, $answer);  
+     foreach($answer as $line)  
+	  {
+          			$tablica = explode(":", $line);
+									
+					
+      
+$fp = fopen($file, "w+");
+// blokada pliku do zapisu
+flock($fp, 2);
+
+// zapisanie danych do pliku
+fwrite($fp, $line);
+
+// odblokowanie pliku
+flock($fp, 3);
+fclose($fp);
+}
+	 }
+	 else{
+					
+					$tablica = explode(":", $stan);
+					}
+	                if($tablica[1]=="ON") 
+					{ 
+					$opcja="Wylacz";
+					}
+					  elseif($tablica[1]=="OFF") 
+					{ 
+					$opcja="Wlacz";
+					}					
+					if($tablica[3]=="ON") 
+					{ 
+					$opcja1="Wylacz";
+					}
+					elseif($tablica[3]=="OFF") 
+					{ 
+					$opcja1="Wlacz";
+					}
+					if($tablica[5]=="ON") 
+					{ 
+					$opcja2="Wylacz";
+					}
+					elseif($tablica[5]=="OFF") 
+					{ 
+					$opcja2="Wlacz";
+					}					
+					if($tablica[7]=="ON") 
+					{ 
+					$opcja3="Wylacz";
+					}
+					elseif($tablica[7]=="OFF") 
+					{ 
+					$opcja3="Wlacz";
+					}
+					if($tablica[9]=="ON") 
+					{ 
+					$opcja4="Wylacz";
+					}
+					elseif($tablica[9]=="OFF") 
+					{ 
+					$opcja4="Wlacz";
+					}					
+					if($tablica[11]=="ON") 
+					{ 
+					$opcja5="Wylacz";
+					}
+					elseif($tablica[11]=="OFF") 
+					{ 
+					$opcja5="Wlacz";
+					}
+					if($tablica[13]=="ON") 
+					{ 
+					$opcja6="Wylacz";
+					}
+					elseif($tablica[13]=="OFF") 
+					{ 
+					$opcja6="Wlacz";
+					}					
+					if($tablica[15]=="ON") 
+					{ 
+					$opcja7="Wylacz";
+					}
+					elseif($tablica[15]=="OFF") 
+					{ 
+					$opcja7="Wlacz";
+					}
+if($d=="10")
+	 {
+	 $tablica = explode(":", "red:OFF:red:OFF:red:OFF:red:OFF:red:OFF:red:OFF:red:OFF:red:OFF:");
+	 }
+
+echo "<table>";
+echo "<tr><td>".$name[0].': </td><td><span style="color:'.$tablica[14].'">'.$tablica[15].'</span><button type="submit" onclick="podajDane(0);">'.$opcja7.'</button> </td></tr>' ;
+echo "<tr><td>".$name[1].': </td><td><span style="color:'.$tablica[12].'">'.$tablica[13].'</span><button type="submit" onclick="podajDane(1);">'.$opcja6.'</button> </td></tr>' ;
+echo "<tr><td>".$name[2].': </td><td><span style="color:'.$tablica[10].'">'.$tablica[11].'</span><button type="submit" onclick="podajDane(2);">'.$opcja5.'</button> </td></tr>' ;
+echo "<tr><td>".$name[3].': </td><td><span style="color:'.$tablica[8].'">'.$tablica[9].'</span><button type="submit" onclick="podajDane(3);">'.$opcja4.'</button> </td></tr>' ;
+echo "<tr><td>".$name[4].': </td><td><span style="color:'.$tablica[6].'">'.$tablica[7].'</span><button type="submit" disabled="disabled" onclick="podajDane(4);">'.$opcja3.'</button> </td></tr>' ;
+echo "<tr><td>".$name[5].': </td><td><span style="color:'.$tablica[4].'">'.$tablica[5].'</span><button type="submit" onclick="podajDane(5);">'.$opcja2.'</button> </td></tr>' ;
+echo "<tr><td>".$name[6].': </td><td><span style="color:'.$tablica[2].'">'.$tablica[3].'</span><button type="submit" onclick="podajDane(6);">'.$opcja1.'</button> </td></tr>' ;
+echo "<tr><td>".$name[7].': </td><td><span style="color:'.$tablica[0].'">'.$tablica[1].'</span><button type="submit" onclick="podajDane(7);">'.$opcja.'</button> </td></tr>' ;                    
+echo "<table>";
+echo '<button type="submit" onclick="podajDane(10);">Wyzeruj</button> <br>' ; 
+
+//echo '</td><td><table><tr><td></td><td><button type="submit" onclick="podajDane(0);">'.$opcja7.'</button></td><td></td></tr><tr><td><button type="submit"  onclick="podajDane(2);">'.$opcja5.'</button></td><td></td><td><button type="submit"  onclick="podajDane(3);">'.$opcja4.'</button></td></tr><tr><td></td><td><button type="submit"  onclick="podajDane(1);">'.$opcja6.'</button></td><td></td></tr></Table>';
+//echo '</td></tr></table>';
+// zamknięcie pliku
+//echo $stan;
+ 
+
+         ?>
+

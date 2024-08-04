@@ -1,0 +1,155 @@
+ <!DOCTYPE html 
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pl" lang="pl">
+<head>
+	<meta property="fb:admins" content="tomek10861page"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-2" />
+	<title>Sterowanie</title>
+<script type="text/javascript">
+var object = false;
+ 
+if (window.XMLHttpRequest) object = new XMLHttpRequest();
+else if (window.ActiveXObject) object = new ActiveXObject("Microsoft.XMLHTTP");
+
+function getXMLHttpRequest()
+{
+var request = false;
+try {
+request = new XMLHttpRequest();
+} catch(err1) {
+try {
+request = new ActiveXObject('Msxml2.XMLHTTP');
+} catch(err2) {
+try {
+request = new ActiveXObject('Microsoft.XMLHTTP');
+} catch(err3) {
+request = false;
+}  
+}
+}
+return request;
+}
+
+function wlacz(d)
+{
+if (r = getXMLHttpRequest()) {
+r.open('GET', 'lpt.php?d=' + d, true);
+r.onreadystatechange = odbierzDane;
+r.send(null);
+}
+}
+function wylacz(s)
+{
+if (r = getXMLHttpRequest()) {
+r.open('GET', 'lpt.php?s=' + s, true);
+r.onreadystatechange = odbierzDane;
+r.send(null);
+}
+}
+function prog(p)
+{
+if (r = getXMLHttpRequest()) {
+r.open('GET', 'lpt.php?p=' + p, true);
+r.onreadystatechange = odbierzDane;
+r.send(null);
+}
+}
+function odbierzDane()
+{
+if (r.readyState == 4 && r.status == 200) {
+document.getElementById('content').innerHTML = r.responseText;
+}
+}
+
+function getData(dataSource, divID)
+{
+    // kontynuuje wylacznie gdy obiekt nie jest zajety
+    if (object.readyState==4 || object.readyState==0) 
+    {
+        // tworzy zmienna odpowiadajaca konkretnemu obiektowi na stronie
+        var obj = document.getElementById(divID);
+ 
+        // czyta z pliku lub wykonuje skrypt
+        object.open("GET", dataSource);
+ 
+        // definiuje metode obslugi odpowiedzi serwera
+        object.onreadystatechange = function()
+        {
+            // kontynuuje jesli transmisja zostala zakonczona powodzeniem
+            if (object.readyState == 4 && object.status == 200) 
+            obj.innerHTML= object.responseText;
+        }
+        // wysyla zadanie do serwera
+         object.send(null);
+      }
+}
+ 
+// w ponizszej funkcji wywolujemy funkcje getData z odpowiednimi parametrami
+// oraz wywolujemy ja sama rekurencyjnie po co okreslony czas (w naszym wypadku 1000 ms)
+function odswiezaj()
+{
+      getData('obrazek.php','mojDIVIK');
+      setTimeout("odswiezaj()", 1000);
+}
+
+</script>
+</head>
+ <body>
+ <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/pl_PL/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<center><H2>Panel sterowania oświetleniem domu</h2><br><a href="index.html">|Strona główna|</a> <a href="guest.html">|Księga gości|</a></center>
+
+<table><tr><td><button type="submit" onclick="wlacz();">Wyświetl</button> <br>
+<div id="mojDIVIK">
+</div>
+<hr>
+ <script language=javascript>
+odswiezaj();
+</script>
+
+<div id="content"></div></td><td>
+<object type="application/x-shockwave-flash" data="http://www.justin.tv/widgets/live_embed_player.swf?channel=tomek10861" id="live_embed_player_flash" height="300" width="400" bgcolor="#000000"><param name="allowFullScreen" value="true"/><param name="allowScriptAccess" value="always" /><param name="allowNetworking" value="all" /><param name="movie" value="http://www.justin.tv/widgets/live_embed_player.swf" /><param name="flashvars" value="hostname=www.justin.tv&channel=tomek10861&auto_play=false&start_volume=25" /></object><a href="http://www.justin.tv/tomek10861#r=-rid-&amp;s=em" class="trk" style="padding:2px 0px 4px; display:block; width:345px; font-weight:normal; font-size:10px; text-decoration:underline; text-align:center">Watch live video from tomek10861 on www.justin.tv</a>
+</td></tr></table>
+
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-8494414819863859";
+/* tomek10861 */
+google_ad_slot = "7065354243";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="//pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+<br>
+<div class="fb-like" data-href="http://www.facebook.com/tomek10861page?ref=hl" data-send="true" data-width="450" data-show-faces="true"></div>
+
+ <script src="http://politykacookies.pl/politykacookies.js"></script> <script type="text/javascript"> cookiesPolicy(); </script> 
+
+ 
+<!-- stat.4u.pl NiE KaSoWaC -->
+<a target=_top href="http://stat.4u.pl/?tomek10861" title="statystyki stron WWW"><img alt="stat4u" src="http://adstat.4u.pl/s4u.gif" border="0"></a>
+<script language="JavaScript" type="text/javascript">
+<!--
+function s4upl() { return "&amp;r=er";}
+//-->
+</script>
+<script language="JavaScript" type="text/javascript" src="http://adstat.4u.pl/s.js?tomek10861"></script>
+<script language="JavaScript" type="text/javascript">
+<!--
+s4uext=s4upl();
+document.write('<img alt="stat4u" src="http://stat.4u.pl/cgi-bin/s.cgi?i=tomek10861'+s4uext+'" width="1" height="1">')
+//-->
+</script>
+<noscript><img alt="stat4u" src="http://stat.4u.pl/cgi-bin/s.cgi?i=tomek10861&amp;r=ns" width="1" height="1"></noscript>
+<!-- stat.4u.pl KoNiEc -->
+</body>
+</html>
